@@ -1,0 +1,59 @@
+<scene version="2.1.0">
+
+<!-- Defaults, these can be set via the command line: -Darg=value -->
+
+
+<!-- Camera and Rendering Parameters -->
+
+	<integrator type="path">
+		<integer name="max_depth" value="12"/>
+	</integrator>
+
+<!-- Materials -->
+
+	<bsdf type="diffuse" id="itu_marble">
+		<rgb value="1.000000 0.500000 0.200000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="itu_ceiling_board">
+		<rgb value="0.290000 0.250000 0.210000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="itu_concrete">
+		<rgb value="0.086500 0.090842 0.088656" name="reflectance"/>
+	</bsdf>
+
+<!-- Emitters -->
+
+
+<!-- Shapes -->
+
+	<shape type="ply">
+		<string name="filename" value="meshes/map_3_osm_buildings-wall.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/map_3_osm_buildings-roof.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="itu_ceiling_board" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/map_3_osm_roads_primary.ply"/>
+		<ref id="itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/map_3_osm_roads_secondary.ply"/>
+		<ref id="itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/map_3_osm_roads_tertiary.ply"/>
+		<ref id="itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/map_3_osm_roads_residential.ply"/>
+		<ref id="itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply">
+		<string name="filename" value="meshes/map_3_osm_roads_service.ply"/>
+		<ref id="itu_concrete" name="bsdf"/>
+	</shape>
+</scene>
