@@ -1,0 +1,22 @@
+mobility:
+  simulation_time: 1800
+  simulation_step: 0.1
+  insertion_density: 20
+  min_distance: 1000
+  vehicle_height: 2
+
+ray:
+  frequency: 12e9
+  diffraction: True
+  edge_diffraction: False
+  scattering: False
+  scat_keep_prob: 0.001
+  scat_random_phases: False
+  tx_antenna_pattern: 'tr38901'
+  tx_antenna_polarization: 'V'
+  rx_antenna_pattern: 'dipole'
+  rx_antenna_polarization: 'V'
+  max_depth: 4
+  num_samples: 1e6
+  max_rx_positions: 1000
+  preprocess_score_thresh: 10
